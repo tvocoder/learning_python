@@ -7,67 +7,105 @@
 # import copy
 
 # dictionary
-books = {
+book = {
     "Publisher": "Black Dog & Leventhal",
     "Languages": ["English"],
     "Pages": 240,
-    "ISBN-10": "9781579128142"
+    "ISBN10": "9781579128142"
 }
 
 # accessing items.
 # refer to its key name, inside square brackets.
-isbn_value = books["ISBN-10"]
+isbn_value = book["ISBN10"]
 print(isbn_value)
 
 # accessing items. alternative version.
 # .get()
-pages_value = books.get("Pages")
+pages_value = book.get("Pages")
 print(pages_value)
 
 # change values
 # by referring to its key name.
-books["Languages"] = "Vietnamese"
-print(books)
+book["Languages"] = ["Vietnamese"]
+print(book)
 
 # looping through a dictionary
 # the return value are the 'keys' of the dictionary
 
 # for loop -- keys(k)
-for k in books:
+for k in book:
     print(k)
 
 # for loop -- values(v)
-for v in books:
-    print(books[v])
+for v in book:
+    print(book[v])
 
 # for loop -- keys() method -- returns keys(k)
-for k in books.keys():
+for k in book.keys():
     print(k)
 
 # for loop -- values() method -- returns value(v)
-for v in books.values():
+for v in book.values():
     print(v)
 
 # for loop -- items() method -- returns both keys and their values
-for k, v in books.items():
+for k, v in book.items():
     print(k, v)
 
 # adding items to dictionary
 # -- new index key -- assigning a value to it
-books["ISBN-13"] = "978-1579128142"
-print(books)
+book["ISBN13"] = "978-1579128142"
+print(book)
+print("-------------")
 
 # dict() Constructor
-rough_draft = dict(books)
-print(rough_draft)
+book_cpy = dict(book)
+print(book_cpy)
+print("-------------")
 
 # copy() -- Returns a copy of the dictionary
-rough_draft = books.copy()
-print(rough_draft)
+book_cpy = book.copy()
+print(book_cpy)
+print("-------------")
 
-# pop() -- Removes the item with the specified key name:
-rough_draft.pop("ISBN-13")
-print(rough_draft)
+# popitem() -- Removes the last inserted key-value pair
+removed_key_value = book_cpy.popitem()
+# removed_property holds key-value pair removed
+print(removed_key_value)
+# print book_cpy with last key-value paired removed
+print(book_cpy)
+
+# dict() -- Make a copy of a dictionary
+book_cpy_2 = dict(book_cpy)
+print(book_cpy_2)
+print("-------------")
+
+# dict() Constructor
+new_book = dict(Publisher = "McGraw-Hill Education", Language = ["English"], Pages = 1040, ISBN10 = "0076639231")
+print(new_book)
+print("-------------")
+
+# Nested Dictionaries
+library = {
+    # storing three books into a library dictionary
+    "book1": book,
+    "book2": book_cpy,
+    "book3": book_cpy_2,
+    "book4": new_book
+}
+print(library)
+print("-------------")
+
+# Removing Items
+# pop() removes the item with the specified key name.
+removed_book = library.pop("book4")
+print(removed_book)
+print("-------------")
+
+# del (keyword) removes item with the specified key name.
+del library["book3"]
+del library["book2"]
+print(library)
 
 # methods:
 # update(): Updates the dictionary with the specified key-value pairs.
@@ -76,7 +114,6 @@ print(rough_draft)
 # items(): Returns a list containing a tuple for each key value pair
 # keys(): Returns a list containing the dictionary's keys
 # pop(): Removes the element with the specified key
-# popitem(): Removes the last inserted key-value pair
 # setdefault(): Returns the value of the specified key. If the key does not exist:
     # Insert the key, with the specified value.
 # values(): Returns a list of all the values in the dictionary.
