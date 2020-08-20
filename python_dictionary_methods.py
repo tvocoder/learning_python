@@ -8,6 +8,7 @@
 
 # dictionary
 book = {
+    "Title": "Elements: A Visual Exploration of Every Known Atom in the Universe",
     "Publisher": "Black Dog & Leventhal",
     "Languages": ["English"],
     "Pages": 240,
@@ -81,7 +82,7 @@ print(book_cpy_2)
 print("-------------")
 
 # dict() Constructor
-new_book = dict(Publisher = "McGraw-Hill Education", Language = ["English"], Pages = 1040, ISBN10 = "0076639231")
+new_book = dict(Title = "Algebra 1, Common Core Edition", Publisher = "McGraw-Hill Education", Language = ["English"], Pages = 1040, ISBN10 = "0076639231")
 print(new_book)
 print("-------------")
 
@@ -96,16 +97,47 @@ library = {
 print(library)
 print("-------------")
 
+# del (keyword) removes item with the specified key name.
+del library["book3"]
+print(library)
+del library["book2"]
+print(library)
+print("-------------")
+
+# copy() -- Returns a copy of the dictionary
+new_library = library.copy()
+
 # Removing Items
 # pop() removes the item with the specified key name.
 removed_book = library.pop("book4")
 print(removed_book)
 print("-------------")
 
-# del (keyword) removes item with the specified key name.
-del library["book3"]
-del library["book2"]
+removed_book_2 = library.pop("book1")
+print(removed_book_2)
+print("-------------")
+
+# clear() -- Removes all the elements from the dictionary
+library.clear()
 print(library)
+print("-------------")
+
+# fromkeys(keys, value) -- Returns a dictionary with specified keys and value
+# -- keys -- Required. An iterable specifying the keys of the new dictionary
+# -- value -- Optional -- The value for all keys. Default value is None
+library_keys = ('book_1', 'book_2')
+library_values = (removed_book, removed_book_2)
+
+new_library = dict.fromkeys(library_keys, library_values)
+print(new_library)
+print("-------------")
+
+# dictionary.get(keyname, value)
+# -- keyname -- Required. The keyname of the item you want to return the value from.
+# -- value -- Optional. -- A value to return if the specified key does not exist. Default None
+prop_none = new_library.get("Price", "Freedom")
+print(prop_none)
+print("-------------")
 
 # methods:
 # update(): Updates the dictionary with the specified key-value pairs.
