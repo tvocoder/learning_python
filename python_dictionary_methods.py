@@ -52,12 +52,24 @@ for v in books.values():
 for k, v in books.items():
     print(k, v)
 
+# adding items to dictionary
+# -- new index key -- assigning a value to it
+books["ISBN-13"] = "978-1579128142"
+print(books)
 
+# dict() Constructor
+rough_draft = dict(books)
+print(rough_draft)
 
+# copy() -- Returns a copy of the dictionary
+rough_draft = books.copy()
+print(rough_draft)
 
+# pop() -- Removes the item with the specified key name:
+rough_draft.pop("ISBN-13")
+print(rough_draft)
 
 # methods:
-# copy(): Returns a copy of the dictionary
 # update(): Updates the dictionary with the specified key-value pairs.
 # fromkeys(): Returns a dictionary with specified keys and value
 # get(): Returns the value of the specified key
@@ -68,5 +80,4 @@ for k, v in books.items():
 # setdefault(): Returns the value of the specified key. If the key does not exist:
     # Insert the key, with the specified value.
 # values(): Returns a list of all the values in the dictionary.
-
 # clear(): Removes all the elements from the dictionary
