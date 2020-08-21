@@ -18,17 +18,17 @@ book = {
 # accessing items.
 # refer to its key name, inside square brackets.
 isbn_value = book["ISBN10"]
-print(isbn_value)
+# print(isbn_value)
 
 # accessing items. alternative version.
 # .get()
 pages_value = book.get("Pages")
-print(pages_value)
+# print(pages_value)
 
 # change values
 # by referring to its key name.
 book["Languages"] = ["Vietnamese"]
-print(book)
+# print(book)
 
 # looping through a dictionary
 # the return value are the 'keys' of the dictionary
@@ -56,34 +56,34 @@ for k, v in book.items():
 # adding items to dictionary
 # -- new index key -- assigning a value to it
 book["ISBN13"] = "978-1579128142"
-print(book)
+# print(book)
 print("-------------")
 
 # dict() Constructor
 book_cpy = dict(book)
-print(book_cpy)
+# print(book_cpy)
 print("-------------")
 
 # copy() -- Returns a copy of the dictionary
 book_cpy = book.copy()
-print(book_cpy)
+# print(book_cpy)
 print("-------------")
 
 # popitem() -- Removes the last inserted key-value pair
 removed_key_value = book_cpy.popitem()
 # removed_property holds key-value pair removed
-print(removed_key_value)
+# print(removed_key_value)
 # print book_cpy with last key-value paired removed
-print(book_cpy)
+# print(book_cpy)
 
 # dict() -- Make a copy of a dictionary
 book_cpy_2 = dict(book_cpy)
-print(book_cpy_2)
+# print(book_cpy_2)
 print("-------------")
 
 # dict() Constructor
 new_book = dict(Title = "Algebra 1, Common Core Edition", Publisher = "McGraw-Hill Education", Language = ["English"], Pages = 1040, ISBN10 = "0076639231")
-print(new_book)
+# print(new_book)
 print("-------------")
 
 # Nested Dictionaries
@@ -110,11 +110,11 @@ new_library = library.copy()
 # Removing Items
 # pop() removes the item with the specified key name.
 removed_book = library.pop("book4")
-print(removed_book)
+# print(removed_book)
 print("-------------")
 
 removed_book_2 = library.pop("book1")
-print(removed_book_2)
+# print(removed_book_2)
 print("-------------")
 
 # clear() -- Removes all the elements from the dictionary
@@ -124,18 +124,20 @@ print("-------------")
 
 # fromkeys(keys, value) -- Returns a dictionary with specified keys and value
 # -- keys -- Required. An iterable specifying the keys of the new dictionary
-# -- value -- Optional -- The value for all keys. Default value is None
 library_keys = ('book_1', 'book_2')
+# -- value -- Optional -- The value for all keys. Default value is None
 library_values = (removed_book, removed_book_2)
-
+# new_library -- Deep Copy -- Constructor?
 new_library = dict.fromkeys(library_keys, library_values)
 print(new_library)
 print("-------------")
 
 # dictionary.get(keyname, value)
 # -- keyname -- Required. The keyname of the item you want to return the value from.
+price = "Price"
 # -- value -- Optional. -- A value to return if the specified key does not exist. Default None
-prop_none = new_library.get("Price", "Freedom")
+value = "Freedom"
+prop_none = new_library.get(price, value)
 print(prop_none)
 print("-------------")
 
