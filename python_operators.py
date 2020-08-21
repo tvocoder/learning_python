@@ -295,6 +295,7 @@ def add(*args):
     for arg in args:
         total += arg
     return total
+
 print(add(1,2,3))
 print(".............")
 
@@ -305,18 +306,32 @@ print(".............")
 # -- Packs the consecutive function keyword arguments into a dictionary.
 def example(**kwargs):
     return kwargs.keys()
-print(example(1 = "a", 2 = "b", 3 = "c"))
+
+print(example(a = 10, b = 20, c = [0,0,0]))
 print(".............")
 
 # * (tuple unpacking)
 # -- Syntax: function(*iterable)
 # -- iterable: iterable object containing the positional arguments.
 # -- Unpacks the contents of a tuple into the function call.
+def add(a,b):
+    return a + b
+t = (2,3)
 
+print(add(*t))
+print(t)
 print(".............")
 
 # ** (dictionary unpacking)
+# Syntax: function(**dict)
+# -- dict: dictionary containing pairs of keyword arguments and their values.
 # -- Unpacks the contents of a dictionary into the function call.
+def add(a = 0, b = 0):
+    return a + b
+
+d = {'a': 2, 'b': 3}
+print(add(**d))
+print(d)
 print(".............")
 
 # @ (decorator)
