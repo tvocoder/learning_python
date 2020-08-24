@@ -95,108 +95,188 @@ print("-------------------------")
 
 print("--= Deleting =--")
 print("-- discard() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Removes an element from the set.
+# Syntax: set.discard(element)
+# -- element: Required. The item you want to delete.
+# Return Value: None
 
 # Example:
+s = {1, 2}
+s.discard(1)
+print(s)
 print("-------------------------")
+
 print("-- remove() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Removes an element from the set(raises KeyError if not found).
+# Syntax: set.remove(element)
+# Return Value: Required. The element you want to delete.
 
 # Example:
+s = {1, 2}
+s.remove(2)
+print(s)
 print("-------------------------")
+
 print("-- pop() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Removes and returns an arbitrary element from the set.
+# Syntax: set.pop()
+# Return Value: The same as deleted by calling this method.
+# Remarks: Raises KeyError if the set is empty.
 
 # Example:
+s = {1, 2}
+pop_val = s.pop()
+print(pop_val)
+
 print("-------------------------")
+
 print("-- clear() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Removes all elements from the set.
+# Syntax: set.clear()
+# Return Value: None
 
 # Example:
+s = {1, 2}
+s.clear()
+print(s)
 print("-------------------------")
 
 print("--= Information =--")
 print("-- issuperset() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a Boolean stating whether the set contains the specified set or iterable
+# Syntax: set.issuperset(iterable)
+# -- iterable: Required. Iterable to be compared against the set.
+# Return Value: bool
+# Remarks: If the iterable is empty, returns True.
 
 # Example:
+s = {1, 2, 3}
+bool = s.issuperset([2, 3])
+print(bool)
 print("-------------------------")
+
 print("-- issubset() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a Boolean stating whether the set is contained in the specified set or iterable.
+# Syntax: set.issubset(iterable)
+# -- iterable: Required. Iterable to be compared against the set.
+# Return Value: bool
+# Remarks: If the iterable is empty, returns False.
 
 # Example:
+s = {1}
+s_1 = {'A', 'B', 'C'}
+bool = s.issubset(s_1)
+print(bool)
 print("-------------------------")
+
 print("-- isdisjoint() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a Boolean stating whether the set contents overlap with the specified set or iterable.
+# Syntax: set.isdisjoint(iterable)
+# -- iterable: Required. Iterable to be compared against the set.
+# Return Value: bool
 
 # Example:
+s = {0, 1, 2}
+s_1 = {3, 4}
+bool = s.isdisjoint(s_1)
+print(bool)
 print("-------------------------")
 
 print("--= Set Operations =--")
 print("-- difference() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a new set with elements in the set that are not in the specified iterables.
+# Syntax: set.difference(iterable, ...)
+# -- iterable: Required. Iterable or multiple iterables to be compared against the set.
+# Return Value: set
 
 # Example:
+s = {1, 2, 3, 4, 5, 6, 7}
+s_1 = {4, 5, 6, 7, 8, 9, 10}
+
+temp_s = s.difference(s_1)
+print(temp_s)
 print("-------------------------")
+
 print("-- intersection() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a new set with elements common to the set and the specified iterables.
+# Syntax: set.intersection(iterable,...)
+# -- iterable,...: Required. Iterable or multiple iterables to be compared against the set.
+# Return Value: set
 
 # Example:
+s_1 = {2, 3}
+s_2 = {2, 3, 4, 5}
+s = {1, 2}.intersection(s_1, s_2)
+print(s)
 print("-------------------------")
+
 print("-- symmetric_difference() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a new set with elements in either the set or the specified iterable but not both.
+# Syntax: set.symmetric_difference(iterable)
+# -- iterable: Required. Any iterable
+# Return Value: set
 
 # Example:
+s_1 = {2, 3}
+s_2 = {2, 3, 4, 5}
+s = s_1.symmetric_difference(s_2)
+print(s)
 print("-------------------------")
+
 print("-- union() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a new set with elements from the set and the specified iterables.
+# Syntax: set.union(iterable,...)
+# -- iterable: Required. Iterable or multiple iterables to be compared against the set.
+# Return Value: set
 
 # Example:
+s_1 = {2, 3}
+s_2 = {2, 3, 4, 5}
+s = {1, 2}.union(s_1, s_2)
+print(s)
 print("-------------------------")
 
 print("--= Set Operations Assignment =--")
 print("-- difference_update() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Updates the set, removing elements found in others.
+# Syntax: set.difference_update(iterable,...)
+# -- iterable: Required. Iterable or multiple iterables to be compared against the set.
+# Return Value: None.
+# Time Complexity: O(len(t))
 
 # Example:
+s = {1, 2, 3, 4, 5}
+s.difference_update({2, 3}, {4, 5})
+print(s)
 print("-------------------------")
+
 print("-- intersection_update() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Updates the set, keeping only elements found in it and all others.
+# Syntax: set.intersection_update(iterable,...)
+# -- iterable: Required. Iterable or multiple iterables to be compared against the set.
+# Return Value: None.
 
 # Example:
+s = {1, 2}
+s.intersection_update({2, 3})
+print(s)
+
+s = {1, 2}
+s.intersection_update({0, 1}, {1, 2})
+print(s)
 print("-------------------------")
+
 print("-- symmetric_difference_update() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Updates the set, keeping only elements found in either set, but not in both.
+# Syntax: set.symmetric_difference_update(iterable)
+# -- iterable: Required. Any iterable.
+# Return Value: None.
+# Time Complexity: O(len(t)) to O(len(t) * len(s))
 
 # Example:
+s = {1, 2}
+s.symmetric_difference_update({2, 3})
+print(s)
 print("-------------------------")
 
 print("--= Copying =--")
