@@ -296,7 +296,8 @@ def add(*args):
         total += arg
     return total
 
-print(add(1,2,3))
+y = add(1,2,3)
+print(y)
 print(".............")
 
 # ** (dictionary packing)
@@ -307,7 +308,8 @@ print(".............")
 def example(**kwargs):
     return kwargs.keys()
 
-print(example(a = 10, b = 20, c = [0,0,0]))
+y = example(a = 1, b = 2, c = 3)
+print(y)
 print(".............")
 
 # * (tuple unpacking)
@@ -316,9 +318,10 @@ print(".............")
 # -- Unpacks the contents of a tuple into the function call.
 def add(a,b):
     return a + b
-t = (2,3)
 
-print(add(*t))
+t = (2, 5)
+c = add(*t)
+print(c)
 print(t)
 print(".............")
 
@@ -330,18 +333,38 @@ def add(a = 0, b = 0):
     return a + b
 
 d = {'a': 2, 'b': 3}
-print(add(**d))
+e = add(**d)
+print(e)
 print(d)
 print(".............")
 
 # @ (decorator)
+# Syntax:
+# >>> def decorator(f):
+# ...     pass
+# ...
+# >>> @decorator
+# ... def function():
+# ...     pass
 # -- Returns a callable wrapped by another callable.
+# def equivalent():
+#    pass
+# equivalent = decorator(function)
 print(".............")
 
 # lambda
 # -- Returns an anonymous function.
+# -- Syntax: lambda variable, ...: expression
+# -- variable, ...: Optional. One or more variables used in the right part of the expresssion.
+# -- expression: Required. Return value of the function.
+# -- Remarks: shorthand way of defining a function that is not bound
+# --- to a specified name during its creation.
+func = lambda a : a + 1
+print(func(10))
 print(".............")
 
+y = sorted(['A', 'b', 'C'], key = lambda x: x.lower())
+print(y)
 # () (call operator)
 # -- Calls a callable object with specified arguments.
 print(".............")
