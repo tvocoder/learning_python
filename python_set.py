@@ -281,76 +281,117 @@ print("-------------------------")
 
 print("--= Copying =--")
 print("-- copy() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a copy of the set.
+# Syntax: set.copy()
+# Return Value: set
 
 # Example:
+s = {1, 2}
+s_cpy = s.copy()
+print(s_cpy)
 print("-------------------------")
+
 print("---= Set Operators =---")
-# Description:
-# Syntax:
-# Return Value:
-
-# Example:
-print("-------------------------")
 print("--= Adding Elements =--")
-# Description:
-# Syntax:
-# Return Value:
 
-# Example:
-print("-------------------------")
 print("-- |=(update) --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Adds elements from another set.
+# Syntax: set |= other
+# -- other: A set object or expression evaluating to a set.
+# Return Value: None.
 
 # Example:
+s = {0, 1}
+s_1 = {1, 2}
+s |= s_1
+print(s)
 print("-------------------------")
 
 print("--= Relational Operators =--")
 print("-- ==(is equal) --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a Boolean stating whether the set has the same elements as the other set.
+# Syntax: set == other
+# -- other: A set object or expression evaluating to a set
+# Return Value: bool
 
 # Example:
+s = {0, 1}
+s_1 = {1, 2}
+is_false = s == s_1
+print(is_false)
 print("-------------------------")
+
 print("-- !=(is not equal) --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a Boolean stating whether the set has different elements as the other set.
+# Syntax: set != other
+# -- other: A set object or expression evaluating to a set
+# Return Value: bool
 
 # Example:
+s = {0, 1}
+s_1 = {1, 2}
+is_true = s != s_1
+print(is_true)
 print("-------------------------")
+
 print("-- <=(issubset) --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a Boolean stating whether the set is contained in the other set.
+# Syntax: set <= other
+# -- other: A set object or expression evaluating to a set.
+# Return Value: bool
 
 # Example:
+s = {0, 1}
+s_1 = {0, 1, 2, 3, 4}
+is_true = s.issubset(s_1)
+print(is_true)
 print("-------------------------")
+
 print("-- <(issubset proper) --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a Boolean stating whether the set is contained in the specified set
+# and that the sets are not equal.
+# Syntax: set < other
+# -- other: A set object or expression evaluating to a set.
+# Return Value: bool
 
 # Example:
+is_true = {1, 2} < {1, 2, 3}
+is_false = {1, 2} < {'frob'}
+
+print(is_true)
+print(is_false)
 print("-------------------------")
+
 print("-- >=(issuperset) --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a Boolean string whether the set contains the other set.
+# Syntax: set >= other
+# -- other: A set object or expression evaluating to a set.
+# Return Value: bool
 
 # Example:
+s = {1, 2, 3}
+s_1 = s.copy()
+s_2 = {4, 5, 6}
+
+is_true = s >= s_1
+is_false = s >= s_2
+
+print(is_true)
+print(is_false)
 print("-------------------------")
+
 print("-- >(issuperset proper) --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a Boolean string whether the set contains the other set and that the sets are not equal.
+# Syntax: set > other
+# -- other: A set object or expression evaluating to a set.
+# Return Value: bool
 
 # Example:
+s = {0, 1, 2, 3}
+s_1 = {1, 2, 3}
+
+is_true = s > s_1
+print(is_true)
 print("-------------------------")
 
 print("--= Set Operations =--")
