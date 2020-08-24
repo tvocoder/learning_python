@@ -5,7 +5,7 @@
 # -- list and dicts can not be used as keys since they are mutable.
 # -- also known as hash tables or associative arrays
 
-print("--Constructors--")
+print("---=Constructors=---")
 # Constructors
 
 ## dict(): returns a dictionary object
@@ -75,9 +75,9 @@ print("********************")
 
 
 ## Methods
-print("Methods")
+print("---=Methods=---")
 
-print("--Content Access--")
+print("---Content Access---")
 # Content Access
 
 # get(): returns the value for key in dictionary; if not found returns default value.
@@ -137,7 +137,7 @@ print(d.values())
 
 print("********************")
 
-print("--Adding Elements--")
+print("---Adding Elements---")
 # Adding Elements
 
 # update(): adds key:value pairs to the dictionary.
@@ -209,7 +209,7 @@ print(t)
 
 print("********************")
 
-print("--Information--")
+print("---Information---")
 ## Information
 
 # has_key(): Returns a Boolean stating whether the specified key is in the dictionary.
@@ -230,7 +230,7 @@ is_true = 'a' in d_5
 print(is_true)
 print("********************")
 
-print("--Other--")
+print("---Other---")
 ## Other
 
 # copy(): returns a shallow copy of the dictionary
@@ -245,7 +245,7 @@ print(dd)
 
 d['b'][0] = 'foo'   # since copy() returns a shallow copy
 print(dd)           # (only references to the copied elements are returned),
-                    # altering the objects in original dictionary will affect it's copy as well
+                    # Altering the objects in original dictionary will affect it's copy as well.
 print("********************")
 
 # fromkeys(): returns a new dictionary with keys from iterable and values all set to a specified value.
@@ -264,7 +264,7 @@ d = {}.fromkeys([1, 2, 3], "NULL")
 print(d)
 print("********************")
 
-print("--Iterators--")
+print("---Iterators---")
 ## Iterators
 
 # iteritems(): returns an iterator over the dictionary's key:value pairs.
@@ -285,7 +285,7 @@ print("********************")
 # iterkeys(): returns an interator over the dictionary's keys.
 print("********************")
 
-print("Dictionary Views")
+print("---Dictionary Views---")
 ## Dictionary Views
 
 # viewitems(): Returns a new view of the dictionary's items ((key,value) pairs).
@@ -302,7 +302,7 @@ print("********************")
 # viewkeys()
 print("********************")
 
-print("--Dictionary View Operators--")
+print("---Dictionary View Operators---")
 ## Dictionary View Operators
 
 # &(itersection): returns elements that appear both in the dictview and the specified iterable.
@@ -321,7 +321,7 @@ print("********************")
 
 print("********************")
 
-print("--Functions--")
+print("---=Functions=---")
 ## Functions
 
 # len(): returns an into type specifying number of elements in the collection.
@@ -411,6 +411,10 @@ print("********************")
 # -- sequence: Required. Any iterable sequence.
 # Remarks: Sequence must be an object with has a __reversed__() method or supports the sequence protocol
 # --- (the __len()__ method and the __getitem__() method with integer arguments starting at 0)
+
+print("--reversed()--")
+# Example:
+
 r = reversed([1, 2, 3, 4])
 print(*r)
 
@@ -422,6 +426,10 @@ print("********************")
 # Syntax: all(iterable)
 # -- iterable: Required. Any iterable type.
 # Remarks: If the iterable is empty, all() returns True.
+
+print("--all()--")
+# Example:
+
 it = []
 print(all(it))
 
@@ -432,6 +440,10 @@ print("********************")
 # any(): Returns a Boolean value that indicates whether the collection contains any values that evaluate to True.
 # -- iterable: Required. Any iterable type.
 # Remarks: If the iterable is empty, returns False.
+
+print("--any()--")
+# Example:
+
 it = []
 print(any(it))
 
@@ -447,6 +459,7 @@ print("********************")
 # Remarks: The next() method of the iterator returned by enumerate() returns a tuple containing a count
 # -- (from start which defaults to 0) and the values obtained from iterating over sequence.
 
+print("--enumerate()--")
 # Example:
 
 for it in enumerate ((1, 2, 3)):
@@ -485,8 +498,16 @@ zipped = zip((1, 2, 3), (4, 5))
 print(*zipped)
 print("********************")
 
-print("Misc")
+print("---Misc---")
 ## Misc
 
 # [] (key lookup): Returns the value associated with the given key.
+# Syntax: dict[key]
+# -- key: Required. Key which value is to be retrieved.
+# Return Value: The same as associated with key.
+
+print("--dict[key]--")
+# Example:
+d = {'a': 1, 'b': 2}['a']
+print(d)
 print("********************" )
