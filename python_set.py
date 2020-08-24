@@ -396,55 +396,102 @@ print("-------------------------")
 
 print("--= Set Operations =--")
 print("** -(difference) **")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a new set with elements in the set that are not in the other set.
+# Syntax: set - other
+# -- other: A set object or expression evaluating to a set.
+# Return Value: set
+# Time Complexity: O(len(s))
 
 # Example:
+s = {1, 2, 3, 4}
+s_1 = {5, 6, 7, 8}
+s_2 = {4, 5, 6, 7}
+
+new_s = s - s_1 - s_2
+print(new_s)
 print("-------------------------")
+
 print("-- &(intersection) --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a new set with elements common to the set and the other set.
+# Syntax: set & other
+# -- other: A set object or expression evaluating to a set.
+# Return Value: set
+# Time Complexity: O(min(len(s), len(t)) to O(len(s)*len(t))
 
 # Example:
+s_1 = {5, 6, 7, 8}
+s_2 = {4, 5, 6, 7}
+
+new_s = s_1 & s_2
+print(new_s)
 print("-------------------------")
+
 print("-- ^(symmetric difference) --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a new set with elements in either the set or the other set but not both.
+# Syntax: set ^ other
+# other: A set object or expression evaluating to a set.
+# Return Value: set
+# Time Complexity: O(len(s)) to O(len(s)*len(t))
 
 # Example:
+s_1 = {5, 6, 7, 8}
+s_2 = {4, 5, 6, 7}
+
+new_s = s_1 ^ s_2
+print(new_s)
 print("-------------------------")
+
 print("-- |(union) --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a new set with elements from the set and the other set.
+# Syntax: set | other
+# -- other: A set object or expression evaluating to a set.
+# Return Value: set
+# Time Complexity: O(len(s) + len(t))
 
 # Example:
+s = {1, 2}
+s_1 = {3, 4}
+s_2 = {4, 5}
+
+new_s = s | s_1 | s_2
+print(new_s)
 print("-------------------------")
 
 print("--= Set Operations Assignment =--")
 print("** -=(difference_update) **")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Updates the set, removing elements found in the other set.
+# Syntax: set -= other |...
+# -- other: A set object or expression evaluating to a set.
+# Return Value: set
 
 # Example:
+s = {1, 2}
+s -= {2, 3}
+print(s)
 print("-------------------------")
+
 print("-- &=(intersection_update) --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Updates the set, keeping only elements found in it and the other set.
+# Syntax: set &= other & ...
+# -- other: A set object or expression evaluating to a set.
+# Return Value: set
 
 # Example:
+s = {1, 2}
+s &= {2, 3}
+print(s)
 print("-------------------------")
+
 print("-- ^=(symmetric_difference_update) --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Updates the set, keeping only elements found in either the set or the other set, but not in both.
+# Syntax: set ^= other
+# -- other: A set object or expression evaluating to a set.
+# Return Value: set
 
 # Example:
+s = {1, 2, 3, 4, 5}
+s ^= {3, 4, 5, 6, 7}
+print(s)
 print("-------------------------")
 
 print("---= Functions =---")
