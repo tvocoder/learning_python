@@ -206,155 +206,272 @@ print("*************************")
 
 print("--= Leading and Trailing Characters --=")
 print("-- lstrip() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a copy of the string with leading characters removed.
+# Syntax: str.lstrip([chars])
+# -- chars: Optional. String specifying the set of characters to be removed. If omitted or None, the chars argument
+# defaults to remove whitespace. The chars argument is not a prefix; rather, all combinations of its values are strip.
+# Return Value: str
 # Time Complexity:
 # Remarks:
 
 # Example:
+print('    spacious   '.lstrip())
+
+s = "AABAA"
+s_strip = s.lstrip("AB")
+print(s_strip)
 print("*************************")
+
 print("-- rstrip() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a copy of the string with trailing characters removed.
+# Syntax: str.rstrip([chars])
+# -- chars: Optional. String specifying the set of characters to be removed. If omitted or None, the chars argument
+# defaults to removing whitespace. The chars argument is not a prefix; rather, all combinations of its values are strip.
+# Return Value: str
 # Time Complexity:
 # Remarks:
 
 # Example:
+print('    spacious    '.rstrip())
+
+s = "AABAA"
+print(s.rstrip("AA"))
 print("*************************")
+
 print("-- strip() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a copy of the string with the leading and trailing characters removed.
+# Syntax: str.strip([chars])
+# -- chars: Optional. String specifying the set of characters to be removed. If omitted or None, the chars argument
+# defaults to removing whitespace. The chars arg is not a prefix; rather, all combinations of its values are stripped.
+# Return Value: str
 # Time Complexity:
 # Remarks:
 
 # Example:
+strip = '    spacious    '.strip()
+print(strip)
+
+print("ABBA".strip("AB"))
 print("*************************")
+
+web_addr = "www.example.com"
+web_addr_strip = web_addr.strip('cmowz')
+print(web_addr_strip)
 
 print("--= Splitting and Joining =--")
 print("-- split() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a list of the words in the string, separated by the delimiter string.
+# Syntax: str.split([sep[,maxsplit]])
+# -- sep: Optional. Character dividing the string into split groups; default is space.
+# -- maxsplit: Optional. Number of splits to do; default is -1 which splits all the items.
+# Return Value: list
 # Time Complexity:
-# Remarks:
+# Remarks: If sep is given, consecutive delimiters are not grouped together and are deemed to delimit empty strings.
 
 # Example:
+s = '1,,2'
+s_list = s.split(',')
+
+s = "1 2 3 4 5"
+s_list = s.split()
+print(s_list)
 print("*************************")
+
 print("-- rsplit() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a list of the words in the string, separated by the delimiter string (starting from right).
+# Syntax: str.rsplit([sep[,maxsplit]])
+# -- sep: Optional. Character dividing the string into split groups; default is space.
+# -- maxsplit: Optional. Number of splits to do; default is -1 which splits all the items.
+# Return Value: list
 # Time Complexity:
 # Remarks:
 
 # Example:
+print(' a b c'.rsplit())
+
+print("----a---b--c-'".rsplit('-'))
 print("*************************")
+
 print("-- partition() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a tuple containing the left part of the string split by the specified separator,
+# the separator itself and the right part of the string.
+# Syntax: str.partition(sep)
+# -- sep: Required. Separator for the returned tuple. If the separator is not found, partition returns a 3-tuple
+# containing the string itself, followed by two empty strings.
+# Return Value: tuple
 # Time Complexity:
 # Remarks:
 
 # Example:
+print("AB-CD-EF".partition('-'))
+
+# This example breaks image file-path into its components
+img = "image.png"
+t = "image.png".partition('.')
+print(t)
 print("*************************")
+
 print("-- rpartition() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a tuple containing the left part of the string split by the specified separator,
+# the separator itself and the right part of the string (starting from the right).
+# Syntax: str.rpartition(sep)
+# -- sep: Required. Separator for the returned tuple. If the separator is not found, partition returns a 3-tuple,
+# containing two empty strings, followed by the string itself.
+# Return Value: tuple
 # Time Complexity:
 # Remarks:
 
 # Example:
+t = "AB-CD-EF".rpartition("-")
+print(t)
+
+t = "image.png".rpartition(".")
+print(t)
 print("*************************")
+
 print("-- splitlines() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a list of the lines in the string, breaking at line boundaries.
+# Syntax: str.splitlines([keepends])
+# -- keepends: Optional. When set to True line breaks are included in the resulting list.
+# Return Value: list
 # Time Complexity:
-# Remarks:
+# Remarks: This method uses the universal newlines approach to splitting lines.
+# -- Unlike split() when a delimiter string sep is given, this method returns an empty list for the empty string,
+# and a terminal line break does not result in an extra line.
 
 # Example:
+s = "AB\nCD\n"
+print(s)
+l = s.splitlines()
+print(l)
 print("*************************")
+
 print("-- join() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a string made from the elements of an iterable.
+# Syntax: str.join(iterable)
+# -- iterable: Required. The iterable used for creating the string.
+# Return Value: str
 # Time Complexity:
-# Remarks:
+# Remarks: The separator between elements is the string providing this method.
 
 # Example:
+l = ['A', 'B', 'C', 'D', 'E', 'F']
+s = ' '.join(l)
+print(s)
 print("*************************")
 
 print("--= Changing Case =--")
 print("-- upper() --")
-# Description:
-# Syntax:
+# Description: Returns a copy of the string in UPPER CASE.
+# Syntax: str.upper()
 # Return Value:
 # Time Complexity:
-# Remarks:
+# Remarks: Note that s.upper().isupper() might be False if s contains uncased characters or if the Unicode category of
+# -- the resulting character(s) is not "Lu" (Letter, uppercase), but e.g. "Lt" (Letter, titlecase)
+# For 8-bit strings, this method is locale-dependent.
 
 # Example:
+s = 'abc'.upper()
+is_true = s.isupper()
+
+print(s)
+print(is_true)
 print("*************************")
+
 print("-- lower() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a copy of the string in lower case.
+# Syntax: str.lower()
+# Return Value: str
 # Time Complexity:
-# Remarks:
+# Remarks: For 8-bit strings, the method is locale-dependent.
 
 # Example:
+s = 'ABC'.lower()
+is_true = s.islower()
+
+print(s)
+print(is_true)
 print("*************************")
+
 print("-- capitalize() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a copy of the string in Capital case.
+# Syntax: str.capitalize()
+# Return Value: str
 # Time Complexity:
-# Remarks:
+# Remarks: For 8-bit strings, this method is locale-dependent.
 
 # Example:
+s = "hello"
+print(s.capitalize())
 print("*************************")
+
 print("-- title() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a copy of the string in Title Case.
+# Syntax: str.title()
+# Return Value: str
 # Time Complexity:
-# Remarks:
+# Remarks: The algorithm uses a simple language-independent defintion of a word as groups of consecutive letters.
+# -- The definition works in many contexts but it means that apostrophes in contractions and possessives form word
+# -- boundaries, which may not be the desired result.
 
 # Example:
+s = "they're bill's friends from the UK".title()
+print(s)
+
+# Workaround for apostrophes can be contructed using regular expressions
+import re
+def titlecase(str):
+    return re.sub(r"[A-Za-z]+('[A-Za-z]+)?",
+                  lambda mo: mo.group(0)[0].upper() +
+                  mo.group(0)[1:].lower(),str)
+print(titlecase("they're bill's friends."))
 print("*************************")
+
 print("-- swapcase() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a copy of the string with case swapped.
+# Syntax: str.swapcase()
+# Return Value: str
 # Time Complexity:
-# Remarks:
+# Remarks: For 8-bit strings, this method is locale-dependent.
 
 # Example:
+print('foo'.swapcase())
+
+print('123'.swapcase())
 print("*************************")
 
 print("--= Information =--")
 print("-- count() --")
-# Description:
-# Syntax:
-# Return Value:
-# Time Complexity:
+# Description: Returns the number of non-overlapping occurences of a substring in the searched string.
+# Syntax: str.count(sub[,start[,end]])
+# -- sub: Required. The string searched for.
+# -- start: Optional. Index form which to start counting. Default is 0 (start of the string)
+# -- end: Optional. The end index for the search. End of the string is the default value.
+# Return Value: int
+# Time Complexity: Optional arguments start and end are interpreted as in slice notation.
 # Remarks:
 
 # Example:
+s = "AAAAAAAAAAA"
+print(s.count("A"))
 print("*************************")
+
 print("-- startswith() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a Boolean stating whether a string starts with the specified prefix.
+# Syntax: str.startswith(prefix[,start[,end]])
+# -- prefix: Required. The substring looked for. prefix can also be a tuple of prefixes to look for.
+# -- start: Optional. Specifies beginning position for the search.
+# -- end: Optional. Specifies ending position for the search.
+# Return Value: bool
 # Time Complexity:
 # Remarks:
 
 # Example:
+s = "log_A1.csv"
+b = s.startswith("log")
+print(b)
 print("*************************")
+
 print("-- endswith() --")
 # Description:
 # Syntax:
