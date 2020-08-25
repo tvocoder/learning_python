@@ -804,41 +804,65 @@ print("-- enumerate() --")
 # Example:
 print("*************************")
 print("-- zip() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a list of tuples, where the i-th tuple contains the i-th element from each of the argument
+# -- sequences or iterables
+# Syntax: zip([iterable,...])
+# -- iterable: Optional. An iterable object
+# Return Value: list
 # Time Complexity:
-# Remarks:
+# Remarks: The returned list is truncated in length to the length of the shortest argument sequence.
+# -- When there are multiple arguments which are all of the same length, zip() is similar to map() with an
+# argument of None. With a single sequence argument, it returns a list of 1-tuples. With no args,
+# empty list.
+# -- The left-to-right evaluation order of the iterables is guaranteed. This makes possible an idiom for clustering
+# a data series into n-length groups using zip(*[iter(s)]*n)
 
 # Example:
+l = zip('foo', 'bar')
+print(*l)
 print("*************************")
+
 print("-- chr() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a string of one character whose ASCII code is the specified number.
+# Syntax: chr(number)
+# -- number: Required. Any integer within the 0-255 range.
+# Return Value: str
 # Time Complexity:
 # Remarks:
 
 # Example:
+print(chr(65))
+print(chr(97))
 print("*************************")
+
 print("-- ord() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns an integer representing the code of the character
+# Syntax: ord(character)
+# -- character: Required. A character
+# Return Value: int
 # Time Complexity:
-# Remarks:
+# Remarks: This function is the inverse of chr() for 8-bit strings and of unichr() for unicode objects.
+# -- If a unicode argument is given and Python was built with UCS2 Unicode, then the character's code point must be
+# in the range [0..65535] inclusive; otherwise the string length is two, and a TypeError will be raised.
 
 # Example:
+print(ord("A"))
+print(ord("a"))
 print("*************************")
+
 print("-- unichr() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a Unicode character specified by the code.
+# Syntax: unichr(number)
+# -- number: Required. An integer specifying the Unicode value of the character to be returned.
+# Return Value: unicode
 # Time Complexity:
-# Remarks:
+# Remarks: This function is the inverse of ord() for Unicode strings.
+# -- The valid range for the argument depends how Python was configured - it may be either UCS2[0..0xFFF] or
+# UCS4[0..0x10FFFF]. ValueError is raised otherwise. For ASCII and 8-bit strings see chr().
 
 # Example:
 print("*************************")
+
 print(" -- `format`_ --")
 # Description:
 # Syntax:
