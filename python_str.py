@@ -9,33 +9,73 @@
 print("---= CONSTRUCTOR =---")
 
 print("-- str() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a string containing a printable representation of an object.
+# Syntax: str(object)
+# -- object: Optional. Any Object. If omitted an emptry string is returned.
+# Return Value: str
 # Time Complexity:
-# Remarks:
+# Remarks: Returns a string containing a printable representation of an object.
+# -- For strings, this returns the string itself.
+# -- The difference with repr(object) is that str(object) does not always attempt to return a string that is acceptable
+# -- to eval(); its goal is to return a printable string. See also unicode().
+
 
 # Example:
+
+# string -- dict
+print(str({'a': 1, 'b': 2}))
+
+# string -- list
+print(str([1, 2, 3]))
+
+# string -- set
+print(str((1, 2)))
 print("*************************")
 
+print(str('foobar'))
+print(repr('foobar'))
+
+bool = bool(str('foobar') == repr('foobar'))
+print(bool)
+
 print("-- x'string'(string designators) --")
-# Description:
-# Syntax:
+# Description: Returns a modified string.
+# Syntax: [designator]string
+# -- r|R : Raw string. Uses different rules for interpreting backslash escape sequences.
+# -- u|U : Unicode string.
+# -- b|B : Alias for bytes type; it indicates the literal should become a bytes literal in Python 3
+# -- Ur|UR|Ur|uR : Raw Unicode.
+# -- br|Br|bR|BR : Raw Bytes
 # Return Value:
 # Time Complexity:
 # Remarks:
 
 # Example:
+s = u'ABCD'
+print(s)
+
+s = b'ABCD'
+print(s)
 print("*************************")
 
 print("-- Literal Syntax --")
-# Description:
+# Description: String literals can be enclosed in matching single quotes(') or double quotes(").
 # Syntax:
 # Return Value:
 # Time Complexity:
-# Remarks:
+# Remarks: Unescaped quotes of same type as the one that was used for creating the string can't be used inside of it
 
-# Example:
+# Example(s):
+# Multiple adjacent string literals(delimited by whitespace), possibly using different quoting conventions,
+# -- are allowed, and their meaning is the same as their concatenation.
+# -- Thus, "hello"'world' is equivalent to "helloworld".
+# -- The '+' operator must be used to concatenate string expressions at run time.
+s = 'AB' "CD"
+print(s)
+
+# The backslash(\) character is used to escape characters that otherwise have a special meaning, such as
+# -- newline, backslash itself, or the quote character.
+print("AA\nBB")
 print("*************************")
 
 print("---= METHODS =---")
