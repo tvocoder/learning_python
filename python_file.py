@@ -141,35 +141,49 @@ print("*************************")
 print("-- readline() --")
 # Description: Reads one entire line from the file.
 # Syntax: file.readline([size])
+# -- size: Optional. If the size argument is present and non-negative, it is a maximum byte count
+# (including the trailing newline) and an incomplete line may be returned.
+# When size is not 0, an empty string is returned only when EOF is encountered immediately.
 # Return Value: str
-# Remarks:
+# Remarks: A trailing newline character is kept in the string (but my be absent when a file ends w/ an incomplete line).
+# Note: Unlike stdio's fgets() in C, the returned string contains null characters('0') if occurred in input.
 
 # Example:
+f = open(r'alice_in_woderland.txt')
+print(f.readline(10))
 print("*************************")
 
 print("-- readlines() --")
-# Description: Reads one entire line from the file.
-# Syntax: file.readline([size])
-# Return Value: str
-# Remarks:
+# Description: Returns a list containing lines from the file.
+# Syntax: file.readlines([sizehint])
+# -- sizehint: Optional. If the sizehint argument is present, instead of reading up to EOF,
+# whole lines totalling approximately sizehint bytes (possibly after rounding up to an internal buffer size) are read.
+# Return Value: list
+# Remarks: Reads lines until EOF using readline() and returns a list containing the lines thus read.
+# -- Objects implementing a file-like iterface may choose to ignore sizehint if it cannot be implemented or
+# cannot be implemented efficiently
 
 # Example:
+f = open(r'alice_in_woderland.txt')
+l = f.readlines()
+print(l)
 print("*************************")
 
 print("-- xreadlines() --")
-# Description: Reads one entire line from the file.
-# Syntax: file.readline([size])
-# Return Value: str
-# Remarks:
+# Description: Returns an iterator over the lines of the file.
+# Syntax: file.xreadlines()
+# Return Value: file
+# Remarks: This method returns the same thing as iter(file).
+# Usage of this function is deprecated. File objects are iterators by default now.
 
 # Example:
 print("*************************")
 
 print("-- next() --")
-# Description: Reads one entire line from the file.
-# Syntax: file.readline([size])
-# Return Value: str
-# Remarks:
+# Description: Returns a next line from the file.
+# Syntax: file.next()
+# Remarks: A file object is its own iterator, for example iter(f) returns f(unless f is closed)
+# When a file is used as an iterator, typically in a for loop
 
 # Example:
 print("*************************")
@@ -178,48 +192,87 @@ print("--= Writing =--")
 print("*************************")
 
 print("-- write() --")
-# Description: Reads one entire line from the file.
-# Syntax: file.readline([size])
-# Return Value: str
-# Remarks:
+# Description: Writes a string to the file.
+# Syntax: file.writes(str)
+# -- str: A string you want to write to the file.
+# Return Value: None.
+# Remarks: There is no return value. Due to buffering, the string may not actually show up in the file
+# -- until the flush() or close() method is called.
 
 # Example:
+f = open(r'alice_in_woderland.txt', 'a')
+f.write('foo')
+f.close()
+
+f = open(r'alice_in_woderland.txt')
+print(f.read())
 print("*************************")
 
 print("-- writelines() --")
-# Description: Reads one entire line from the file.
-# Syntax: file.readline([size])
-# Return Value: str
-# Remarks:
+# Description: Writes a sequence of strings to the file.
+# Syntax: file.writelines(iterable)
+# -- iterable: Any iterable object producing strings, typically a list of strings.
+# Return Value: None.
+# Remarks: There is no return value. The name is intended to match readlines(); writelines()
+# -- Does not add line separators.
+# Each iteration returns the same result as readline(), and iteration ends when the readline() method
+# -- returns an empty string.
+# File objects also offer a number of other interesting attributes. These are not required for file-like objects,
+# -- but should be implemented if they make sense for the particular object.
 
 # Example:
+f = open(r'test.txt', 'w')
+l = ['foo', 'bar']
+f.writelines(l)
+f.close()
+
+f = open(r'test.txt')
+print(f.read())
 print("*************************")
 
 print("-- flush() --")
-# Description: Reads one entire line from the file.
-# Syntax: file.readline([size])
-# Return Value: str
-# Remarks:
+# Description: Flushes the write buffers of the file.
+# Syntax: file.flush()
+# Return Value: None.
+# Remarks: It works like stdio's fflush(). This maybe a no-op on some file-like objects.
+# flush() does not necessarily write the file's data to disk.
 
 # Example:
+fw = open(r'test.txt', 'w')
+fw.write('foobar')
+
+fr = open(r'test.txt')
+print(fr.readlines()) # wrote a line to fr file, will not write until close() method is called.
+
+fw.flush() # flusing forces the buffer content into the file without closing it
+print(fr.readlines())
+
+fw.close()
 print("*************************")
 
 print("--= File Position =--")
 print("*************************")
 
 print("-- tell() --")
-# Description: Reads one entire line from the file.
-# Syntax: file.readline([size])
-# Return Value: str
-# Remarks:
+# Description: Returns the file's current position.
+# Syntax: file.tell()
+# Return Value: long
+# Remarks: On Windows, tell() can return illegal values. Use binary ('rb') to circumvent this problem.
 
 # Example:
+f = open(r'test.txt')
+print(f.tell())
+
+f.seek(3)
+print(f.tell())
 print("*************************")
 
 print("-- seek() --")
-# Description: Reads one entire line from the file.
-# Syntax: file.readline([size])
-# Return Value: str
+# Description: Sets the file's current position.
+# Syntax: file.seek(offset[,whence])
+# -- offset: Required. The offset from the beginning of the file.
+# -- whence: Optional.
+# Return Value: None.
 # Remarks:
 
 # Example:
