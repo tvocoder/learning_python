@@ -82,60 +82,126 @@ print("---= METHODS =---")
 
 print("--= Searching =--")
 print("-- find() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns the index of the first occurrence of the string searched for.
+# Syntax: str.find(sub[,start[,end]])
+# -- sub: Required. The string searched for.
+# -- start: Optional. Search start position.
+# -- end: Optional. Search end position.
+# Return Value: int
 # Time Complexity:
-# Remarks:
+# Remarks: Returns -1 if sub is not found.
+# -- The find() method should be used only if you need to know the position of sub.
+# -- To check if sub is a substring or not, use the in operator.
 
 # Example:
+s = "Hello World"
+search = "hello"
+
+found = search.upper() in s.upper()
+print(found)
+
+found_idx = s.find("World")
+print(found_idx)
 print("*************************")
+
 print("-- rfind() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns the index of the last occurence of the string searched for.
+# Syntax: str.rfind(sub[,start[,end]])
+# -- sub: Required. The string searched for.
+# -- start: Optional. Search start position.
+# -- end: Optional. Search end position.
+# Return Value: int
 # Time Complexity:
-# Remarks:
+# Remarks: Returns -1 if sub(string) is not found
+# -- The rfind() method should be used only if you need to know the position of sub.
+# -- To check if sub is a substring or not, use the in operator:
 
 # Example:
+found = "ABAB".rfind("B")
+print(found)
+
+found_1 = "ABAB".rfind("B", 0, 2)
+print(found)
+
+found_2 = "ABAB".rfind("B", 2)
+print(found)
 print("*************************")
+
 print("-- index() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns the index of the last occurrence of the string searched for(raises ValueError if not found).
+# Syntax: str.index(sub[,start[,end]])
+# -- sub: Required. The string searched for.
+# -- start: Optional. Search start position.
+# -- end: Optional. Search end position.
+# Return Value: int
 # Time Complexity:
-# Remarks:
+# Remarks: Raises ValueError if not found
 
 # Example:
+idx_loc = "ABAB".index("B")
+print(idx_loc)
+
+idx_loc_1 = "ABAB".index("B", 2, 4)
+print(idx_loc_1)
+
+idx_loc_2 = "ABAB".index("B", 2)
+print(idx_loc_2)
 print("*************************")
+
 print("-- rindex() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns the index of the first occurrence of the string searched for.
+# Syntax: str.rindex(sub[,start[,end]])
+# -- sub: Required. The string searched for.
+# -- start: Optional. Search start position.
+# -- end: Optional. Search end position.
+# Return Value: int
 # Time Complexity:
-# Remarks:
+# Remarks: Raises ValueError if not found.
 
 # Example:
+idx_loc = "ABAB".rindex("B")
+print(idx_loc)
+
+idx_loc = "ABAB".rindex("B", 2, 4)
+print(idx_loc)
+
+idx_loc = "ABAB".rindex("B", 2)
+print(idx_loc)
 print("*************************")
 
 print("--= Replacing =--")
 print("-- replace() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a copy of the string with a specified substring replaced specified number of times.
+# Syntax: str.replace(old, new[,count])
+# -- old: Required. String to be replaced.
+# -- new: Optional. String to replace the old one.
+# -- count: Optional. Number of old occurrences to replace.
+# Return Value: str
 # Time Complexity:
 # Remarks:
 
 # Example:
+print("ABCAB".replace('AB', 'ab'))
+
+s = "ABCAB"
+t = "AB"
+r = "ab"
+print(s.replace(t, r, 1))
 print("*************************")
-print("-- translate() --")
-# Description:
-# Syntax:
-# Return Value:
-# Time Complexity:
-# Remarks:
 
-# Example:
+print("-- translate() --")
+# Description: Returns a copy of the string with characters mapped through the given translation table or deleted.
+# Syntax: str.translate(table[,deletechars])
+# -- table: Required. Must be a string of length 256.
+# -- deletechars: Optional. Characters to be deleted from the string.
+# Return Value: str
+# Time Complexity:
+# Remarks: You can use the maketrans() helper function in the string module to create a translation table.
+# -- For string Objects, set the table argument to None for translations that only delete characters.
+
+# Example(s):
+# Delete all the vowels from the string
+# print("ABCDE".translate("AEIOU"))
 print("*************************")
 
 print("--= Leading and Trailing Characters --=")
