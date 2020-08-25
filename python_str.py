@@ -473,126 +473,210 @@ print(b)
 print("*************************")
 
 print("-- endswith() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a Boolean stating whether a string ends with the specified suffix.
+# Syntax: str.startswith(suffix[,start[,end]])
+# Return Value: bool
 # Time Complexity:
 # Remarks:
 
 # Example:
+s = "image.png"
+s_2 = "image.gif"
+
+b = s.endswith("png")
+b_2 = s_2.endswith(("png", "gif"))
+
+print(b)
+print(b_2)
 print("*************************")
+
 print("-- isalnum() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a Boolean stating whether the string contains only letters and digits.
+# Syntax: str.isalnum()
+# Return Value: bool
 # Time Complexity:
-# Remarks:
+# Remarks: For 8-bit strings, this method is locale-dependent. Returns False if string is empty.
 
 # Example:
+s = "abc12345"
+b = s.isalnum()
+print(b)
+
+s = "!@#"
+b = s.isalnum()
+print(b)
 print("*************************")
+
 print("-- isalpha() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a Boolean stating whether the string contains only letters.
+# Syntax: str.isalpha()
+# Return Value: bool
 # Time Complexity:
-# Remarks:
+# Remarks: For 8-bit strings, this method is locale-dependent. Returns False if string is empty.
 
 # Example:
+s = "abcdef"
+print(s.isalpha())
+
+s = "12345"
+print(s.isalpha())
 print("*************************")
+
 print("-- isdigit() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a Boolean string whether the string contains only digits.
+# Syntax: str.isdigit()
+# Return Value: bool
 # Time Complexity:
-# Remarks:
+# Remarks: For 8-bit strings, this method is locale-dependent. Returns False if string is empty.
 
 # Example:
+s = "12345"
+print(s.isdigit())
+
+s = "abcdef"
+print(s.isdigit())
 print("*************************")
+
 print("-- islower() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a Boolean stating whether the string is in lower case.
+# Syntax: str.islower()
+# Return Value: bool
 # Time Complexity:
-# Remarks:
+# Remarks: For 8-bit strings, this method is locale-dependent. Returns False if string is empty.
 
 # Example:
+s = "abcdef"
+print(s.islower())
+
+s = "12345"
+print(s.islower())
 print("*************************")
+
 print("-- isspace() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a Boolean stating whether the string contains only whitespace characters.
+# Syntax: str.isspace()
+# Return Value: bool
 # Time Complexity:
-# Remarks:
+# Remarks: For 8-bit strings, this method is locale-dependent. Returns False if string is empty.
 
 # Example:
+s = "     "
+print(s.isspace())
+
+s = "abcdef"
+print(s.isspace())
 print("*************************")
+
 print("-- istitle() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a Boolean stating whether the string is in Title case.
+# Syntax: str.istitle()
+# Return Value: bool
 # Time Complexity:
-# Remarks:
+# Remarks: For 8-bit strings, this method is locale-dependent. Returns False if string is empty.
 
 # Example:
+s = "Title"
+print(s.istitle())
+
+s = "title"
+print(s.istitle())
 print("*************************")
+
 print("-- isupper() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a Boolean stating whether the string is in UPPER CASE.
+# Syntax: str.isupper()
+# Return Value: bool
 # Time Complexity:
-# Remarks:
+# Remarks: For 8-bit strings, this method is locale-dependent. Returns False if string is empty.
 
 # Example:
+s = "ABCDEF"
+print(s.isupper())
+
+s = "abcdef"
+print(s.isupper())
 print("*************************")
 
 print("--= Formatting =--")
 print("-- ljust() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns the string left justified in a string of specified length.
+# Syntax: str.ljust(width[,fillchar])
+# -- width: Required. The width of the field containing the string.
+# -- fillchar: Optional. Specifies the padding character (default is a space)
+# Return Value: str
 # Time Complexity:
-# Remarks:
+# Remarks: The original string is returned if width is less than or equal to len(str)
 
 # Example:
+s = "abcdef"
+s_new = s.ljust(10, "*")
+print(s_new)
 print("*************************")
+
 print("-- rjust() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns the string right justified in a string of specified length.
+# Syntax: str.rjust(width[,fillchar])
+# -- width: Required. The width of the field containing the string.
+# -- fillchar: Optional. Specifies the padding character (default is a space).
+# Return Value: str
 # Time Complexity:
-# Remarks:
+# Remarks: The original string is returned if width is less than or equal to len(str)
 
 # Example:
+s = "abcdef"
+s_new = s.rjust(10, "*")
+print(s_new)
 print("*************************")
+
 print("-- center() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns the string centered in a string of specified length.
+# Syntax: str.center(width[,fillchar])
+# -- width: Required. The width of the field containing the string.
+# -- fillchar: Optional. Specifies the padding character (default is a space).
+# Return Value: str
 # Time Complexity:
 # Remarks:
 
 # Example:
+s = "abcdef"
+s_new = s.center(10, "*")
+print(s_new)
 print("*************************")
+
 print("-- zfill() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns the numeric string left filled with zeros in a string of specified length.
+# Syntax: str.zfill(width)
+# -- width: Required. Width of the padding field.
+# Return Value: str
 # Time Complexity:
-# Remarks:
+# Remarks: A sign prefix handled correctly. The original string is returned if width is less than or equal to len(str).
 
 # Example:
+s = "281"
+s_new = s.zfill(10)
+print(s_new)
 print("*************************")
+
 print("-- expandtabs() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns a copy of the string where all tab characters were replaced by spaces.
+# Syntax: str.expandtabs([tabsize])
+# Return Value: str
 # Time Complexity:
-# Remarks:
+# Remarks: Tab positions occur every tabsize characters (default is 8, giving tab positions at columns 0, 8, 16, ...)
+# -- To expand the string, the current column is set to zero and the string is examined character by character.
+# -- If the character is a tab (t), one or more space characters are inserted in the result until the current column is
+# -- equal to the next tab position. (The tab character itself is not copied). If the character is a newline (n) or
+# -- return (r), it is copied and the current column is reset to zero. Any other character is copied unchanged and the
+# --- current column is incremented by one regardless of how the character is represented when printed.
 
 # Example:
+s = "AA\tBB\n"
+s_new = s.expandtabs()
+print(s_new)
 print("*************************")
+
 print("-- `format`_ --")
-# Description:
+# Description: Returns a formatted version of the string.
 # Syntax:
 # Return Value:
 # Time Complexity:
@@ -603,22 +687,37 @@ print("*************************")
 
 print("--= Encodings =--")
 print("-- decode() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Decodes the string using the codec registered for encoding.
+# Syntax: str.decode([encoding[,errors]])
+# -- encoding: Optional. The desired encoding. Defaults to the default string encoding. Codecs module for a full list.
+# -- errors: Optional. errors maybe given to a set a different error handling scheme.
+# Typical Error Values:
+# -- 'strict': Raises ValueError (or a subclass); this is the default.
+# -- 'ignore': Ignore the character and continue with the next.
+# -- 'replace': Replace with a suitable replacement character.
+# Other possible values are any other name registered via codecs.register_error()
+# Return Value: unicode
 # Time Complexity:
 # Remarks:
 
 # Example:
 print("*************************")
+
 print("-- encode() --")
-# Description:
-# Syntax:
-# Return Value:
+# Description: Returns an encoded version of the string.
+# Syntax: str.encode([encoding[,errors]])
+# -- encoding: Optional. The desired encoding. Defaults to the default string encoding. Codecs module for a full list.
+# -- errors: Optional. errors maybe given to a set a different error handling scheme.
+# Typical error values:
+# -- 'strict': Raise ValueError (or a subclass): this is the default.
+# -- 'ignore': Ignore the character and continue with the next.
+# -- 'replace': Replace with a suitable replacement character.
+# Return Value: str
 # Time Complexity:
 # Remarks:
 
 # Example:
+print('foo'.encode())
 print("*************************")
 
 print("---= FUNCTIONS =---")
