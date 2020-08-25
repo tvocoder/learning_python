@@ -16,38 +16,228 @@
 # They correspond to the interpreter's standard input, output, and error streams.
 
 print("---= Constructors =---")
+
 print("-- file() --")
+# Description:
+# Syntax: unichr(number)
+# Time Complexity:
+# Remarks:
+
+# Example:
+print("*************************")
 print("-- open() --")
+# Description:
+# Syntax: unichr(number)
+# Time Complexity:
+# Remarks:
+
+# Example:
+print("*************************")
 
 print("---= Methods =---")
 
 print("--= Reading =--")
+# Description:
+# Syntax: unichr(number)
+# Time Complexity:
+# Remarks:
+
+# Example:
+print("*************************")
+
 print("-- read() --")
+# Description:
+# Syntax: unichr(number)
+# Time Complexity:
+# Remarks:
+
+# Example:
+print("*************************")
+
 print("-- readline() --")
+# Description:
+# Syntax: unichr(number)
+# Time Complexity:
+# Remarks:
+
+# Example:
+print("*************************")
+
 print("-- readlines() --")
+# Description:
+# Syntax: unichr(number)
+# Time Complexity:
+# Remarks:
+
+# Example:
+print("*************************")
+
 print("-- xreadlines() --")
+# Description:
+# Syntax: unichr(number)
+# Time Complexity:
+# Remarks:
+
+# Example:
+print("*************************")
+
 print("-- next() --")
+# Description:
+# Syntax: unichr(number)
+# Time Complexity:
+# Remarks:
+
+# Example:
+print("*************************")
 
 print("--= Writing =--")
+
 print("-- write() --")
+# Description:
+# Syntax: unichr(number)
+# Time Complexity:
+# Remarks:
+
+# Example:
+print("*************************")
+
 print("-- writelines() --")
+# Description:
+# Syntax: unichr(number)
+# Time Complexity:
+# Remarks:
+
+# Example:
+print("*************************")
+
 print("-- flush() --")
+# Description:
+# Syntax: unichr(number)
+# Time Complexity:
+# Remarks:
+
+# Example:
+print("*************************")
 
 print("--= File Position =--")
+
 print("-- tell() --")
+# Description:
+# Syntax: unichr(number)
+# Time Complexity:
+# Remarks:
+
+# Example:
+print("*************************")
+
 print("-- seek() --")
+# Description:
+# Syntax: unichr(number)
+# Time Complexity:
+# Remarks:
+
+# Example:
+print("*************************")
 
 print("--= Other =--")
+
 print("-- close() --")
+# Description:
+# Syntax: unichr(number)
+# Time Complexity:
+# Remarks:
+
+# Example:
+print("*************************")
+
 print("-- fileno() --")
+# Description:
+# Syntax: unichr(number)
+# Time Complexity:
+# Remarks:
+
+# Example:
+print("*************************")
+
 print("-- truncate() --")
+# Description:
+# Syntax: unichr(number)
+# Time Complexity:
+# Remarks:
+
+# Example:
+print("*************************")
+
 print("-- isatty() --")
+# Description:
+# Syntax: unichr(number)
+# Time Complexity:
+# Remarks:
+
+# Example:
+print("*************************")
 
 print("---= Properties =---")
+
 print("-- name() --")
+# Description:
+# Syntax: unichr(number)
+# Time Complexity:
+# Remarks:
+
+# Example:
+print("*************************")
+
 print("-- mode() --")
+# Description:
+# Syntax: unichr(number)
+# Time Complexity:
+# Remarks:
+
+# Example:
+print("*************************")
+
 print("-- encoding() --")
+# Description:
+# Syntax: unichr(number)
+# Time Complexity:
+# Remarks:
+
+# Example:
+print("*************************")
+
 print("-- closed() --")
+# Description:
+# Syntax: unichr(number)
+# Time Complexity:
+# Remarks:
+
+# Example:
+print("*************************")
+
 print("-- errors() --")
+# Description:
+# Syntax: unichr(number)
+# Time Complexity:
+# Remarks:
+
+# Example:
+print("*************************")
+
 print("-- newlines() --")
+# Description:
+# Syntax: unichr(number)
+# Time Complexity:
+# Remarks:
+
+# Example:
+print("*************************")
+
 print("-- softspace() --")
+# Description:
+# Syntax: unichr(number)
+# Time Complexity:
+# Remarks:
+
+# Example:
+print("*************************")
