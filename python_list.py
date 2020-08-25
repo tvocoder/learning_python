@@ -229,30 +229,74 @@ print("-- [](index operator) --")
 # -- index: Index of the item you want to access. Must be an integer.
 # Return Value: The same as selected.
 # Time Complexity: O(1)
+# Discussion: The built-in fundamental sequence types are:
+# -- strings - str and unicode
+# -- arrays - list and tuple
+# Since all sequences are ordered and indexed arrays of objects, each object stored in a sequence has it's associated
+# index number - positive one, zero indexed and starting from left, and -1 from the right.
 
 # Example:
+l = ([0, 1], [2, 3])
+val = l[0][0]
+print(val)
+
+l = [0, 1, 2, 3, 4]
+print(l[-1])
+# since lists are mutable indexes can be used for item assignment or deletion
+l[-1] = "ABCD"
+print(l)
 print("-------------------------")
+
 print("-- [:](slicing) --")
-# Description:
-# Syntax:
-# Return Value:
-# Remarks:
+# Description: Gives access to a specified range of sequence's elements
+# Syntax: [start:stop[:step]]
+# -- start: Optional. Starting index of the slice. Defaults to 0.
+# -- stop: Optional. The last index of the slice or the number of items to get. Defaults to len(sequence).
+# -- step: Optional. Extended slice syntax. Step value of the slice. Defaults to 1.
+# Return Value: The same as selected.
+# Time Complexity: O(k) for slice retrieval; O(n) for deletion; O(n+k) for slice assignment
 
 # Example:
+val = "ABCD"[0:4:2]
+print(val)
+
+# Negative step argument can be used to reverse the sequence:
+val = "ABCD"[::-1]
+print(val)
+
+# Slices can be used to replace multiple items.
+l = [0, 1, 2, 3]
+l[:2] = ("AB", "CD")
+print(l)
+
+# deleting items
+l = [0, 1, 2, 3]
+del l[::2]
+print(l)
 print("-------------------------")
+
 print("-- +(concatention) --")
-# Description:
-# Syntax:
-# Return Value:
-# Remarks:
+# Description: Returns a concatenation of two sequences.
+# Syntax: A + B
+# -- A: Any sequence.
+# -- B: Sequence of the same type as A.
+# Return Value: The same as used as sequence operands.
+# Time Complexity: O(k)
 
 # Example:
+print("AB" + "CD")
+print((1, 2, 3) + (4, 5, 6))
 print("-------------------------")
+
 print("-- *(multiple concatenation) --")
-# Description:
-# Syntax:
-# Return Value:
-# Remarks:
+# Description: Returns a sequence self-concatenated specified amount of times.
+# Syntax: A * N or N * A
+# -- A: Any sequence
+# -- N: Any expression evaluating to a numeric type.
+# Return Value: The same as used as sequence operand.
+# Time Complexity: O(nk)
 
 # Example:
+print("A" * 10)
+print([0, 1] * 2)
 print("-------------------------")

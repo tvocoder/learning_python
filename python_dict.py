@@ -496,7 +496,7 @@ print(*zipped)
 
 zipped = zip((1, 2, 3), (4, 5))
 print(*zipped)
-print("********************")
+print("************ -********")
 
 print("---Misc---")
 ## Misc
