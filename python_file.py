@@ -104,211 +104,227 @@ print("-- open() --")
 # -- fileinput --  os -- os.path -- tempfile -- shutil
 
 # Example:
+print(open('alice_in_woderland.txt'))
+
+alice = open(r'alice_in_woderland.txt', 'r+')
+print(alice.readline())
 print("*************************")
 
 print("---= Methods =---")
-
-print("--= Reading =--")
-# Description:
-# Syntax: unichr(number)
-# Time Complexity:
-# Remarks:
-
-# Example:
 print("*************************")
+print("--= Reading =--")
+
 
 print("-- read() --")
-# Description:
-# Syntax: unichr(number)
-# Time Complexity:
-# Remarks:
+# Description: Returns specified amount of bytes from the file.
+# Syntax: file.read([size])
+# -- size: Optional. Reads at most size bytes from the file (less if the read hits EOF before obtaining size bytes)>
+# If the size argument is negative or omitted, reads all data until EOF is reached.
+
+# Remarks: The bytes are returned as a string object.
+# -- An empty string is returned when EOF is encountered immediately.
+# (For certain files, like ttys, it makes sense to continue reading after an EOF is hit).
+
+# Notes: This method may call the underlying C function fread() more than once in an effort
+# -- to acquire as close to size bytes as possible.
+# Also note that when in non-blocking mode, less data than was requested maybe returned, if no size parameter was given.
+# This function is simply a wrapper for the underlying fread() C function, and will behave the same in corner cases,
+# -- such as whether the EOF value is cached.
+
+# Return Value: None.
 
 # Example:
+alice.read()
+
 print("*************************")
 
 print("-- readline() --")
-# Description:
-# Syntax: unichr(number)
-# Time Complexity:
+# Description: Reads one entire line from the file.
+# Syntax: file.readline([size])
+# Return Value: str
 # Remarks:
 
 # Example:
 print("*************************")
 
 print("-- readlines() --")
-# Description:
-# Syntax: unichr(number)
-# Time Complexity:
+# Description: Reads one entire line from the file.
+# Syntax: file.readline([size])
+# Return Value: str
 # Remarks:
 
 # Example:
 print("*************************")
 
 print("-- xreadlines() --")
-# Description:
-# Syntax: unichr(number)
-# Time Complexity:
+# Description: Reads one entire line from the file.
+# Syntax: file.readline([size])
+# Return Value: str
 # Remarks:
 
 # Example:
 print("*************************")
 
 print("-- next() --")
-# Description:
-# Syntax: unichr(number)
-# Time Complexity:
+# Description: Reads one entire line from the file.
+# Syntax: file.readline([size])
+# Return Value: str
 # Remarks:
 
 # Example:
 print("*************************")
 
 print("--= Writing =--")
+print("*************************")
 
 print("-- write() --")
-# Description:
-# Syntax: unichr(number)
-# Time Complexity:
+# Description: Reads one entire line from the file.
+# Syntax: file.readline([size])
+# Return Value: str
 # Remarks:
 
 # Example:
 print("*************************")
 
 print("-- writelines() --")
-# Description:
-# Syntax: unichr(number)
-# Time Complexity:
+# Description: Reads one entire line from the file.
+# Syntax: file.readline([size])
+# Return Value: str
 # Remarks:
 
 # Example:
 print("*************************")
 
 print("-- flush() --")
-# Description:
-# Syntax: unichr(number)
-# Time Complexity:
+# Description: Reads one entire line from the file.
+# Syntax: file.readline([size])
+# Return Value: str
 # Remarks:
 
 # Example:
 print("*************************")
 
 print("--= File Position =--")
+print("*************************")
 
 print("-- tell() --")
-# Description:
-# Syntax: unichr(number)
-# Time Complexity:
+# Description: Reads one entire line from the file.
+# Syntax: file.readline([size])
+# Return Value: str
 # Remarks:
 
 # Example:
 print("*************************")
 
 print("-- seek() --")
-# Description:
-# Syntax: unichr(number)
-# Time Complexity:
+# Description: Reads one entire line from the file.
+# Syntax: file.readline([size])
+# Return Value: str
 # Remarks:
 
 # Example:
 print("*************************")
 
 print("--= Other =--")
+print("*************************")
 
 print("-- close() --")
-# Description:
-# Syntax: unichr(number)
-# Time Complexity:
+# Description: Reads one entire line from the file.
+# Syntax: file.readline([size])
+# Return Value: str
 # Remarks:
 
 # Example:
 print("*************************")
 
 print("-- fileno() --")
-# Description:
-# Syntax: unichr(number)
-# Time Complexity:
+# Description: Reads one entire line from the file.
+# Syntax: file.readline([size])
+# Return Value: str
 # Remarks:
 
 # Example:
 print("*************************")
 
 print("-- truncate() --")
-# Description:
-# Syntax: unichr(number)
-# Time Complexity:
+# Description: Reads one entire line from the file.
+# Syntax: file.readline([size])
+# Return Value: str
 # Remarks:
 
 # Example:
 print("*************************")
 
 print("-- isatty() --")
-# Description:
-# Syntax: unichr(number)
-# Time Complexity:
+# Description: Reads one entire line from the file.
+# Syntax: file.readline([size])
+# Return Value: str
 # Remarks:
 
 # Example:
 print("*************************")
 
 print("---= Properties =---")
+print("*************************")
 
 print("-- name() --")
-# Description:
-# Syntax: unichr(number)
-# Time Complexity:
+# Description: Reads one entire line from the file.
+# Syntax: file.readline([size])
+# Return Value: str
 # Remarks:
 
 # Example:
 print("*************************")
 
 print("-- mode() --")
-# Description:
-# Syntax: unichr(number)
-# Time Complexity:
+# Description: Reads one entire line from the file.
+# Syntax: file.readline([size])
+# Return Value: str
 # Remarks:
 
 # Example:
 print("*************************")
 
 print("-- encoding() --")
-# Description:
-# Syntax: unichr(number)
-# Time Complexity:
+# Description: Reads one entire line from the file.
+# Syntax: file.readline([size])
+# Return Value: str
 # Remarks:
 
 # Example:
 print("*************************")
 
 print("-- closed() --")
-# Description:
-# Syntax: unichr(number)
-# Time Complexity:
+# Description: Reads one entire line from the file.
+# Syntax: file.readline([size])
+# Return Value: str
 # Remarks:
 
 # Example:
 print("*************************")
 
 print("-- errors() --")
-# Description:
-# Syntax: unichr(number)
-# Time Complexity:
+# Description: Reads one entire line from the file.
+# Syntax: file.readline([size])
+# Return Value: str
 # Remarks:
 
 # Example:
 print("*************************")
 
 print("-- newlines() --")
-# Description:
-# Syntax: unichr(number)
-# Time Complexity:
+# Description: Reads one entire line from the file.
+# Syntax: file.readline([size])
+# Return Value: str
 # Remarks:
 
 # Example:
 print("*************************")
 
 print("-- softspace() --")
-# Description:
-# Syntax: unichr(number)
-# Time Complexity:
+# Description: Reads one entire line from the file.
+# Syntax: file.readline([size])
+# Return Value: str
 # Remarks:
 
 # Example:
