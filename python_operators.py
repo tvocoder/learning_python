@@ -252,10 +252,10 @@ is_true = True
 # in -- A [not] in B
 # -- A: any valid object
 # -- B: any valid object
-# -- Time Complexity: O(1) for dict O(1) to O(n) for sets O(n) for sequences
+# Time Complexity: O(1) for dict O(1) to O(n) for sets O(n) for sequences
 # --- -str -list -tuple
-# -- Remarks: When used with dictionaries checks the keys instead of values.
-# -- Returns a Boolean string whether the object is in the container.
+# Remarks: When used with dictionaries checks the keys instead of values.
+# Returns a Boolean string whether the object is in the container.
 is_true = txt1 not in txt2
 print(is_true)
 print(".............")

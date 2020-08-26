@@ -139,7 +139,7 @@ print("********************")
 print("--enumerate()--")
 # Example:
 
-for it in enumerate ((1, 2, 3)):
+for it in enumerate((1, 2, 3)):
     print(it)
 
 # e = enumerate([1, 2, 3], 1)
@@ -166,6 +166,7 @@ print("--zip()--")
 x = [1, 2, 3]
 y = [4, 5, 6]
 zipped = zip(x, y)
+print(list(zipped))
 print(*zipped)
 
 # x2, y2 = zip(*zipped)
